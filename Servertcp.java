@@ -1,4 +1,4 @@
-class servertcp
+class Servertcp
 {
 System.out.println("hello");
 
