@@ -10,7 +10,12 @@ class ServerTcp{
         // sending to client (pwrite object)
         OutputStream ostream = sock.getOutputStream(); 
         PrintWriter pwrite = new PrintWriter(ostream, true);
+        // receiving from server ( receiveRead  object)
+         InputStream istream = sock.getInputStream();
+        BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 
+        String receiveMessage, sendMessage;               
+       
     }
 
 }
