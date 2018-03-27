@@ -7,6 +7,10 @@ class ServerTcp{
         System.out.println("Server  ready");
         Socket sock = sersock.accept( );   
         BufferedReader keyRead = new BufferedReader(new InputStreamReader(System.in)); 
+        // sending to client (pwrite object)
+        OutputStream ostream = sock.getOutputStream(); 
+        PrintWriter pwrite = new PrintWriter(ostream, true);
+
     }
 
 }
