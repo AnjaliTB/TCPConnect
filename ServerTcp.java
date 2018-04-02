@@ -19,10 +19,11 @@ class ServerTcp{
        {
        	    receiveMessage = receiveRead.readLine();
       	    System.out.println("Client: " + receiveMessage); 
-            if((receiveMessage = receiveRead.readLine()) != null)  
-            {
-                System.out.println("Client: " + receiveMessage);         
-            }         
+            if(receiveMessage.equalsIgnoreCase("ok"))  
+        	{
+			System.out.println("Server exiting...");	
+            		System.exit(0);   
+        	}        
             sendMessage = keyRead.readLine(); 
             pwrite.println(sendMessage);             
             pwrite.flush();
