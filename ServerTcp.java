@@ -15,8 +15,10 @@ class ServerTcp{
         BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 
         String receiveMessage, sendMessage;               
-       while(true)
-        {
+       do
+       {
+       	    receiveMessage = receiveRead.readLine();
+      	    System.out.println("Client: " + receiveMessage); 
             if((receiveMessage = receiveRead.readLine()) != null)  
             {
                 System.out.println("Client: " + receiveMessage);         
