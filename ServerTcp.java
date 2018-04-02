@@ -23,9 +23,15 @@ class ServerTcp{
         	{
 			System.out.println("Server exiting...");	
             		System.exit(0);   
-        	}        
+        	}  
+            System.out.print("Server: ");      
             sendMessage = keyRead.readLine(); 
-            pwrite.println(sendMessage);             
+            pwrite.println(sendMessage);
+            if(sendMessage.equalsIgnoreCase("ok"))
+        	{
+            		System.out.println("Server exiting..."); // displaying at prompt
+			System.exit(0);
+        	}             
             pwrite.flush();
       }  
     }
