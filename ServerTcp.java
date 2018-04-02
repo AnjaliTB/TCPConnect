@@ -33,7 +33,7 @@ class ServerTcp{
 			System.exit(0);
         	}             
             pwrite.flush();
-      }  
+      } while(true); 
     }
 
 }
