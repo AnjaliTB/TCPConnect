@@ -15,16 +15,25 @@ class ServerTcp{
         BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 
         String receiveMessage, sendMessage;               
-       while(true)
-        {
-            if((receiveMessage = receiveRead.readLine()) != null)  
-            {
-                System.out.println("Client: " + receiveMessage);         
-            }         
+       do
+       {
+       	    receiveMessage = receiveRead.readLine();
+      	    System.out.println("Client: " + receiveMessage); 
+            if(receiveMessage.equalsIgnoreCase("ok"))  
+        	{
+			System.out.println("Server exiting...");	
+            		System.exit(0);   
+        	}  
+            System.out.print("Server: ");      
             sendMessage = keyRead.readLine(); 
-            pwrite.println(sendMessage);             
+            pwrite.println(sendMessage);
+            if(sendMessage.equalsIgnoreCase("ok"))
+        	{
+            		System.out.println("Server exiting..."); // displaying at prompt
+			System.exit(0);
+        	}             
             pwrite.flush();
-      }  
+      } while(true); 
     }
 
 }
