@@ -25,7 +25,15 @@ public static void main(String[] args) throws Exception
         	{
             		System.out.println("Client exiting..."); // displaying at prompt
 			System.exit(0);
-		}  
+		} 
+		receiveMessage = receiveRead.readLine();		// flush the data
+		System.out.println("Server: " + receiveMessage); 
+        	if(receiveMessage.equalsIgnoreCase("ok")) //receive from server
+        	{
+			
+			System.out.println("Client exiting..."); // displaying at prompt
+			System.exit(0);
+		}    
        }while(true) ;               
      }
 }
