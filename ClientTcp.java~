@@ -23,7 +23,7 @@ public static void main(String[] args) throws Exception
         if((receiveMessage = receiveRead.readLine()) != null) //receive from server
         {
             System.out.println("Server: " + receiveMessage); // displaying at prompt
-        }         
+       }         
        }while(true) ;               
      }
 }

@@ -17,13 +17,15 @@ public static void main(String[] args) throws Exception
      String receiveMessage, sendMessage;               
      do
      	{
+     	System.out.print("Client: ");  
         sendMessage = keyRead.readLine();  // keyboard reading
         pwrite.println(sendMessage);       // sending to server
         pwrite.flush();                    // flush the data
-        if((receiveMessage = receiveRead.readLine()) != null) //receive from server
-        {
-            System.out.println("Server: " + receiveMessage); // displaying at prompt
-       }         
+        if(sendMessage.equalsIgnoreCase("ok"))
+        	{
+            		System.out.println("Client exiting..."); // displaying at prompt
+			System.exit(0);
+		}  
        }while(true) ;               
      }
 }
