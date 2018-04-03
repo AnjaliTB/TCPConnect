@@ -13,18 +13,17 @@ public static void main(String[] args) throws Exception
       // receiving from server ( receiveRead  object)
      InputStream istream = sock.getInputStream();
      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
- 
-     System.out.println("Start the chitchat, type and press Enter key");
+    System.out.println("Client ready for chatting, type 'ok' to exit");;
      String receiveMessage, sendMessage;               
-     while(true)
-     {
+     do
+     	{
         sendMessage = keyRead.readLine();  // keyboard reading
         pwrite.println(sendMessage);       // sending to server
         pwrite.flush();                    // flush the data
         if((receiveMessage = receiveRead.readLine()) != null) //receive from server
         {
             System.out.println("Server: " + receiveMessage); // displaying at prompt
-        }         
-      }               
+       }         
+       }while(true) ;               
      }
 }
